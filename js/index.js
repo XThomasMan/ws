@@ -59,7 +59,7 @@ $(function() {
     AndroidOrIos();
     //判断 ios OR an
     div2InIt();
-    acquiring();
+    //acquiring();
     var timer = 200;
     var timerFunc = setInterval(function() {
         spanEach();
@@ -76,8 +76,8 @@ $(function() {
             timerFunc = null;
         }
     }, 200);
-    var evt = "onorientationchange" in window ? "orientationchange" : "resize";
-    window.addEventListener(evt, acquiring, false);
+    /*  var evt = "onorientationchange" in window ? "orientationchange" : "resize";
+    window.addEventListener(evt, acquiring, false);*/
     $("#section1>.fingerprint-trigger").click(function() {
         $("#section1").hide();
         $video[0].play();
