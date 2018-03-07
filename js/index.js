@@ -68,7 +68,7 @@ $(function() {
     AndroidOrIos();
     //判断 ios OR an
     div2InIt();
-    //acquiring();
+    acquiring();
     var timer = 200;
     var timerFunc = setInterval(function() {
         spanEach();
@@ -85,8 +85,8 @@ $(function() {
             timerFunc = null;
         }
     }, 200);
-    /*  var evt = "onorientationchange" in window ? "orientationchange" : "resize";
-    window.addEventListener(evt, acquiring, false);*/
+    var evt = "onorientationchange" in window ? "orientationchange" : "resize";
+    window.addEventListener(evt, acquiring, false);
     $("#section1>.fingerprint-trigger").click(function() {
         $("#section1").hide();
         $video[0].play();
@@ -177,23 +177,10 @@ function div2InIt() {
 }
 
 function acquiring() {
-    // 获取设备宽高
-    var h = document.documentElement.clientHeight, w = document.documentElement.clientWidth, hint = h > w, ntransform_origin = w / 2;
-    if (hint) {
-        //竖屏
-        $(".container").css({
-            height: w,
-            width: h,
-            transform: "rotate(90deg)",
-            "transform-origin": ntransform_origin
-        });
+    var orientation = window.orientation;
+    if (orientation != 0) {
+        $("#model").css("display", "none");
     } else {
-        //横屏
-        $(".container").css({
-            height: h,
-            width: w,
-            "transform-origin": 0,
-            transform: "rotate(0deg)"
-        });
+        $("#model").css("display", "flex");
     }
 }
