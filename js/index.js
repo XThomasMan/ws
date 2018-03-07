@@ -51,6 +51,15 @@ var $video = {};
 
 var pauseCount = 0;
 
+var movie1 = 2;
+
+//视频1停顿的位置
+var movie2 = 5;
+
+//视频2停顿的位置
+var movie3 = 8;
+
+//视频3停顿的位置
 $(function() {
     $video = $("#video");
     $fingerprint = $("#fingerprint");
@@ -64,7 +73,7 @@ $(function() {
     var timerFunc = setInterval(function() {
         spanEach();
         timer += 200;
-        if (timer == 4e3) {
+        if (timer == 8e3) {
             $("#section0").hide();
             $("#section1").css("display", "flex");
             var setTime = setTimeout(function() {
@@ -90,21 +99,21 @@ $(function() {
 
 function timeupdate(self) {
     var currentTime = self.currentTime.toFixed(3);
-    if (currentTime >= 2) {
+    if (currentTime >= movie1) {
         if (pauseCount < 1 && pauseCount >= 0) {
             $video[0].pause();
             $fingerprint.show();
             pauseCount++;
         }
     }
-    if (currentTime >= 5) {
+    if (currentTime >= movie2) {
         if (pauseCount < 2 && pauseCount >= 1) {
             $video[0].pause();
             $fingerprint.show();
             pauseCount++;
         }
     }
-    if (currentTime >= 8) {
+    if (currentTime >= movie3) {
         if (pauseCount < 3 && pauseCount >= 2) {
             $video[0].pause();
             $fingerprint.children().remove();
