@@ -51,13 +51,13 @@ var $video = {};
 
 var pauseCount = 0;
 
-var movie1 = 2;
+var movie1 = 4;
 
 //视频1停顿的位置
-var movie2 = 5;
+var movie2 = 6;
 
 //视频2停顿的位置
-var movie3 = 8;
+var movie3 = 9;
 
 //视频3停顿的位置
 $(function() {
