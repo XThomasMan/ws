@@ -293,9 +293,9 @@ function acquiring() {
     
     var orientation = window.orientation;
     if (orientation != 0) {
-        $("#model").css("display", "none");
+       // $("#model").css("display", "none");
     } else {
-        $("#model").css("display", "flex");
+       // $("#model").css("display", "flex");
     }
     
 }
