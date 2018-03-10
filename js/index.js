@@ -191,7 +191,7 @@ function timeupdate(self) {
         }
     }
 }
-\
+
 function play_dream() {
     var music_dream = document.getElementById('dream_music');
     music_dream.play();
