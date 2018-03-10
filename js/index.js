@@ -106,8 +106,8 @@ document.addEventListener('DOMContentLoaded', function () {
     function audioAutoPlay() {
         var bg_music = document.getElementById('bg_music');
         bg_music.play();
-	document.addEventListener("WeixinJSBridgeReady", function () {
-	    var bg_music = document.getElementById('bg_music');		
+    document.addEventListener("WeixinJSBridgeReady", function () {
+        var bg_music = document.getElementById('bg_music');     
             bg_music.play();
         }, false);    
     }
@@ -116,9 +116,19 @@ document.addEventListener('DOMContentLoaded', function () {
 */
 
 document.addEventListener("WeixinJSBridgeReady", function () {
-	    var bg_music = document.getElementById('bg_music');		
-            bg_music.play();
-        }, false);   
+    var bg_music = document.getElementById('bg_music');     
+    bg_music.play();
+
+    var music_dream = document.getElementById('dream_music');
+    var music_red = document.getElementById("red_music");
+    var music_no_loop_red = document.getElementById('red_no_loop_music');
+    var music_yellow = document.getElementById("yellow_music");
+
+    music_dream.load();
+    music_red.load();
+    music_yellow.load();
+    music_no_loop_red.load();
+}, false);   
 
 function stop_bg_music() {
     var bg_music = document.getElementById('bg_music');
@@ -272,13 +282,13 @@ function acquiring() {
     
     var h = document.documentElement.clientHeight, w = document.documentElement.clientWidth, hint = h > w, ntransform_origin = w / 2;
     if (hint) {
-	    //竖屏
-	    $(".container").css({
-		    height: w,
-		    width: h,
-		    transform: "rotate(90deg)",
-		    "transform-origin": ntransform_origin
-	    });
+        //竖屏
+        $(".container").css({
+            height: w,
+            width: h,
+            transform: "rotate(90deg)",
+            "transform-origin": ntransform_origin
+        });
     } else {
         //横屏
         $(".container").css({
