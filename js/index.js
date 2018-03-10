@@ -191,7 +191,7 @@ function timeupdate(self) {
         }
     }
 }
-
+\
 function play_dream() {
     var music_dream = document.getElementById('dream_music');
     music_dream.play();
@@ -208,8 +208,7 @@ function stop_red_music() {
 
 function play_yellow_music() {
     var music_yellow = document.getElementById("yellow_music");
-    music_yellow.play();
-}
+    music_yellow.play();}
 function stop_yellow_music() {
     var music_yellow = document.getElementById("yellow_music");
     music_yellow.pause();
@@ -270,7 +269,7 @@ function div2InIt() {
 
 function acquiring() {
     // 获取设备宽高
-    /*
+    
     var h = document.documentElement.clientHeight, w = document.documentElement.clientWidth, hint = h > w, ntransform_origin = w / 2;
     if (hint) {
 	    //竖屏
@@ -289,13 +288,13 @@ function acquiring() {
             transform: "rotate(0deg)"
         });
     }
-    */
-    
+  
+    /*
     var orientation = window.orientation;
     if (orientation != 0) {
        // $("#model").css("display", "none");
     } else {
        // $("#model").css("display", "flex");
     }
-    
+    */
 }
