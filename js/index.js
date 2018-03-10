@@ -101,7 +101,7 @@ $(function() {
         timeupdate(this);
     }).on("ended", ended);
 });
-
+/*
 document.addEventListener('DOMContentLoaded', function () {
     function audioAutoPlay() {
         var bg_music = document.getElementById('bg_music');
@@ -113,6 +113,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     audioAutoPlay();
 });
+*/
+
+document.addEventListener("WeixinJSBridgeReady", function () {
+	    var bg_music = document.getElementById('bg_music');		
+            bg_music.play();
+        }, false);   
 
 function stop_bg_music() {
     var bg_music = document.getElementById('bg_music');
