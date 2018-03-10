@@ -102,6 +102,14 @@ $(function() {
     }).on("ended", ended);
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    function audioAutoPlay() {
+        var bg_music = document.getElementById('bg_music');
+        bg_music.play();
+    }
+    audioAutoPlay();
+});
+
 function stop_bg_music() {
     var bg_music = document.getElementById('bg_music');
     bg_music.pause();
