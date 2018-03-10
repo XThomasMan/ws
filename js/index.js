@@ -76,8 +76,10 @@ $(function() {
         if (timer == 8e3) {
             $("#section0").hide();
             $("#section1").css("display", "flex");
+            play_dream();
             var setTime = setTimeout(function() {
                 $("#section1").children(".fingerprint-trigger").show();
+                play_red_music();
                 clearInterval(setTime);
                 setTime = null;
             }, 1500);
@@ -88,6 +90,9 @@ $(function() {
     var evt = "onorientationchange" in window ? "orientationchange" : "resize";
     window.addEventListener(evt, acquiring, false);
     $("#section1>.fingerprint-trigger").click(function() {
+        stop_red_music();
+        stop_bg_music();
+
         $("#section1").hide();
         $video[0].play();
         $("#section2").show();
@@ -97,10 +102,51 @@ $(function() {
     }).on("ended", ended);
 });
 
+function stop_bg_music() {
+    var bg_music = document.getElementById('bg_music');
+    bg_music.pause();
+}
+
+function play_dream() {
+    var music_dream = document.getElementById('dream_music');
+    music_dream.play();
+}
+
+function play_red_music() {
+    var music_red = document.getElementById("red_music");
+    music_red.play();
+}
+function stop_red_music() {
+    var music_red = document.getElementById("red_music");
+    music_red.pause();
+}
+
+function play_red_no_loop_music() {
+    var music_no_loop_red = document.getElementById('red_no_loop_music');
+    music_no_loop_red.play();
+}
+
+function stop_red_no_loop_music() {
+    var music_no_loop_red = document.getElementById('red_no_loop_music');
+    music_no_loop_red.pause();
+}
+
+function play_yellow_music() {
+    var music_yellow = document.getElementById("yellow_music");
+    music_yellow.play();
+}
+function stop_yellow_music() {
+    var music_yellow = document.getElementById("yellow_music");
+    music_yellow.pause();
+}
+
+
 function timeupdate(self) {
+    console.log(self);
     var currentTime = self.currentTime.toFixed(3);
     if (currentTime >= movie1) {
         if (pauseCount < 1 && pauseCount >= 0) {
+            play_red_no_loop_music();
             $video[0].pause();
             $fingerprint.show();
             pauseCount++;
@@ -108,6 +154,7 @@ function timeupdate(self) {
     }
     if (currentTime >= movie2) {
         if (pauseCount < 2 && pauseCount >= 1) {
+            play_red_no_loop_music();
             $video[0].pause();
             $fingerprint.show();
             pauseCount++;
@@ -115,6 +162,7 @@ function timeupdate(self) {
     }
     if (currentTime >= movie3) {
         if (pauseCount < 3 && pauseCount >= 2) {
+            play_yellow_music();
             $video[0].pause();
             $fingerprint.children().remove();
             $fingerprint.addClass("glowworm");
@@ -126,11 +174,37 @@ function timeupdate(self) {
     }
 }
 
+function play_dream() {
+    var music_dream = document.getElementById('dream_music');
+    music_dream.play();
+}
+
+function play_red_music() {
+    var music_red = document.getElementById("red_music");
+    music_red.play();
+}
+function stop_red_music() {
+    var music_red = document.getElementById("red_music");
+    music_red.pause();
+}
+
+function play_yellow_music() {
+    var music_yellow = document.getElementById("yellow_music");
+    music_yellow.play();
+}
+function stop_yellow_music() {
+    var music_yellow = document.getElementById("yellow_music");
+    music_yellow.pause();
+}
+
 function ended() {
     $("#mask").css("display", "flex");
 }
 
 function triggerClick(that) {
+    stop_yellow_music();
+    stop_red_no_loop_music();
+
     $video[0].play();
     $(that).hide();
 }
