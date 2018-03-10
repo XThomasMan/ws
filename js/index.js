@@ -296,5 +296,5 @@ function acquiring() {
     } else {
        // $("#model").css("display", "flex");
     }
-    */
+    */ 
 }
