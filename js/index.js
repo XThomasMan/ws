@@ -106,6 +106,9 @@ document.addEventListener('DOMContentLoaded', function () {
     function audioAutoPlay() {
         var bg_music = document.getElementById('bg_music');
         bg_music.play();
+	document.addEventListener("WeixinJSBridgeReady", function () {
+            bg_music.play();
+        }, false);    
     }
     audioAutoPlay();
 });
