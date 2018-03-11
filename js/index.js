@@ -279,7 +279,7 @@ function div2InIt() {
 
 function acquiring() {
     // 获取设备宽高
-    
+    /*
     var h = document.documentElement.clientHeight, w = document.documentElement.clientWidth, hint = h > w, ntransform_origin = w / 2;
     if (hint) {
         //竖屏
@@ -298,13 +298,14 @@ function acquiring() {
             transform: "rotate(0deg)"
         });
     }
+    */ 
   
-    /*
+    
     var orientation = window.orientation;
     if (orientation != 0) {
-       // $("#model").css("display", "none");
+        $("#model").css("display", "none");
     } else {
-       // $("#model").css("display", "flex");
+        $("#model").css("display", "flex");
     }
-    */ 
+    
 }
