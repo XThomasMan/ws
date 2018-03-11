@@ -302,7 +302,6 @@ function acquiring() {
   
     
     var orientation = window.orientation;
-    alert(orientation);
     if (orientation != 0) {
         $("#model").css("display", "none");
     } else {
