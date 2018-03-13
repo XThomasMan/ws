@@ -195,7 +195,7 @@ function timeupdate(self) {
             $fingerprint.children().remove();
             $fingerprint.addClass("glowworm");
             $fingerprint.css("animation", "none");
-            $fingerprint.html("<div></div> <p>打开你的故事</p>");
+            $fingerprint.html("<div></div> <p>想此刻 梦想成真</p>");
             $fingerprint.css("display", "flex");
             pauseCount++;
         }
