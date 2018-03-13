@@ -170,13 +170,13 @@ function stop_yellow_music() {
 
 
 function timeupdate(self) {
-    console.log(self);
     var currentTime = self.currentTime.toFixed(3);
     if (currentTime >= movie1) {
         if (pauseCount < 1 && pauseCount >= 0) {
             play_red_no_loop_music();
             $video[0].pause();
             $fingerprint.show();
+            $('#fingerprint_txt1').fadeIn();
             pauseCount++;
         }
     }
@@ -185,6 +185,7 @@ function timeupdate(self) {
             play_red_no_loop_music();
             $video[0].pause();
             $fingerprint.show();
+            $('#fingerprint_txt2').fadeIn();
             pauseCount++;
         }
     }
@@ -231,6 +232,14 @@ function ended() {
 function triggerClick(that) {
     stop_yellow_music();
     stop_red_no_loop_music();
+
+    if (pauseCount < 2) {
+        $('#fingerprint_txt1').fadeOut();
+    }
+    if (pauseCount >= 2) {
+        $('#fingerprint_txt1').fadeOut();
+        $('#fingerprint_txt2').fadeOut();
+    }
 
     $video[0].play();
     $(that).hide();
