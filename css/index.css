@@ -196,10 +196,10 @@ video {
 	z-index: 5000
 }
 
-#fingerprint>img {
+/*#fingerprint>img {
 	-webkit-animation: fingerprint_animation 1s infinite;
 	animation: fingerprint_animation 1s infinite
-}
+}*/
 
 .fingerprint-txt {
 	display: none;
