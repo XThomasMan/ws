@@ -97,6 +97,7 @@ $(function () {
   //判断 ios OR an
   div2InIt();
   acquiring();
+  spanEach();
   loading();
   var evt = "onorientationchange" in window ? "orientationchange" : "resize";
   window.addEventListener(evt, acquiring, false);
