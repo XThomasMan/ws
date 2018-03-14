@@ -69,7 +69,7 @@ var movie3 = 9;
 function loading() {
   new mo.Loader(res, {
     loadType: 1,
-    minTime: 300,
+    minTime: 1000,
     onLoading: function (count, total) {
 
     },
