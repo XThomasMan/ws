@@ -24,8 +24,7 @@
   function initOptions(options) {
     (!options.hasOwnProperty("speed") || isNaN(options.speed)) && (options.speed = 1e3);
     (!options.hasOwnProperty("percent") || isNaN(options.percent)) && (options.percent = 100);
-    !options.hasOwnProperty("height") && (options.height = "8px");
-    !options.hasOwnProperty("direction") && (options.direction = "left");
+    !options.hasOwnProperty("height") && (options.height = "8px");    !options.hasOwnProperty("direction") && (options.direction = "left");
     options.fontSize = Math.floor(parseInt(options.height) * 6 / 10) + "px";
     options.lineHeight = options.height;
   }
@@ -61,7 +60,7 @@ var pauseCount = 0;
 var movie1 = 4;
 
 //视频1停顿的位置
-var movie2 = 6.8;
+var movie2 = 7.2;
 
 //视频2停顿的位置
 var movie3 = 9;
