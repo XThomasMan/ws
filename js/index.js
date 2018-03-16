@@ -60,7 +60,7 @@ var pauseCount = 0;
 var movie1 = 4;
 
 //视频1停顿的位置
-var movie2 = 6.29160;
+var movie2 = 6.29159;
 
 //视频2停顿的位置
 var movie3 = 9;
