@@ -60,7 +60,7 @@ var pauseCount = 0;
 var movie1 = 4;
 
 //视频1停顿的位置
-var movie2 = 6.2916667;
+var movie2 = 6.29166;
 
 //视频2停顿的位置
 var movie3 = 9;
@@ -181,7 +181,7 @@ function stop_yellow_music() {
 
 
 function timeupdate(self) {
-  var currentTime = self.currentTime.toFixed(7);
+  var currentTime = self.currentTime.toFixed(5);
   if (currentTime >= movie1) {
     if (pauseCount < 1 && pauseCount >= 0) {
       play_red_no_loop_music();
